@@ -1,0 +1,25 @@
+<div id="main">
+  <h3>Did you do something <span class="color">{{ color }}</span> today? Tell us what it was...</h3>
+  
+  <div class="response">
+    <mat-form-field id="name-input" appearance="outline">
+        <mat-label>Your name</mat-label>
+        <input matInput required 
+            [(ngModel)]="name"
+            id="name" type="text">
+    </mat-form-field>
+    <mat-form-field id="experience-input" appearance="outline">
+        <mat-label>Your experience</mat-label>
+        <textarea matInput rows="6" required 
+            [(ngModel)]="experience"
+            id="experience"></textarea>
+    </mat-form-field>
+    <button id="submit-button" matButton="outlined" (click)="submitExperience()">SUBMIT EXPERIENCE</button>
+    <mat-spinner [diameter]="30" strokeWidth="4" id="spinner" class="hidden"></mat-spinner>
+    <p id="success-message" class="hidden">
+        Successfully saved your experience! Come back tomorrow to experience a new color
+    </p>
+  </div>
+
+  <a class="back" href="/">Back to Main</a>
+</div>
