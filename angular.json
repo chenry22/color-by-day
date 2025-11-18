@@ -86,6 +86,12 @@
               "src/styles.css"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "buildTarget": "color-by-day"
+          }
         }
       }
     }
