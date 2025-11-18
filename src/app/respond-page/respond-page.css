@@ -1,11 +1,11 @@
 #main {
-    margin: 60px 80px;
+    margin: 8dvh 10vw;
 }
 
 .color {
     font-size: 30px;
-    margin: 0 8px;
     letter-spacing: 0.05rem;
+    line-height: 34px;
 }
 
 .response {
@@ -20,7 +20,7 @@
 
 #name-input {
     max-width: 40%;
-    min-width: 250px;
+    min-width: 40vw;
 }
 
 #submit-button {

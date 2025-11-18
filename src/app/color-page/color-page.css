@@ -1,8 +1,8 @@
 .columns {
-    margin: 60px 80px;
+    margin: 8dvh 10vw;
     display: flex;
     justify-content: space-between;
-    height: calc(100vh - 120px);
+    height: 84dvh;
 }
 
 #col1 {
@@ -20,7 +20,8 @@
 .nav-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
-.nav-button a {
+a button {
+    cursor: pointer;
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
