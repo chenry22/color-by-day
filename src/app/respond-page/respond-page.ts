@@ -32,6 +32,16 @@ export class RespondPage implements OnInit {
     var color = await this.sb.getColor(this.elementRef);
     this.color = GetColorName(color);
     this.hexcode = color;
+
+    document.getElementsByClassName("bottom")[0].classList.toggle(this.sb.colorIsDark(color) ? "white" : "black");
+
+    document.getElementById("spinner")?.classList.add("hidden");
+    if ((localStorage.getItem('lastColor') ?? "") === this.hexcode) {
+      // already responded to this color...
+      document.getElementById("already-responded-message")?.classList.remove("hidden");
+    } else {
+      document.getElementById("submit-button")?.classList.remove("hidden");
+    }
   }
 
   async submitExperience() {
@@ -50,6 +60,8 @@ export class RespondPage implements OnInit {
       if (success) {
         document.getElementById("spinner")?.classList.toggle("hidden");
         document.getElementById("success-message")?.classList.toggle("hidden");
+
+        localStorage.setItem('lastColor', this.hexcode);
       } else {
         alert("Failed to save your response. Please try again!");
         document.getElementById("submit-button")?.classList.toggle("hidden");

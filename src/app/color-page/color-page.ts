@@ -24,5 +24,7 @@ export class ColorPage implements OnInit {
 
     this.color = GetColorName(color);
     this.hexcode = color;
+
+    document.getElementsByClassName("bottom")[0].classList.toggle(this.sb.colorIsDark(color) ? "white" : "black");
   }
 }

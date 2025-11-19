@@ -14,12 +14,18 @@
             [(ngModel)]="experience"
             id="experience"></textarea>
     </mat-form-field>
-    <button id="submit-button" matButton="outlined" (click)="submitExperience()">SUBMIT EXPERIENCE</button>
-    <mat-spinner [diameter]="30" strokeWidth="4" id="spinner" class="hidden"></mat-spinner>
+    <button id="submit-button" class="hidden" matButton="outlined" (click)="submitExperience()">SUBMIT EXPERIENCE</button>
+    <mat-spinner [diameter]="30" strokeWidth="4" id="spinner"></mat-spinner>
     <p id="success-message" class="hidden">
-        Successfully saved your experience! Come back tomorrow to experience a new color
+        Successfully saved your experience! Come back tomorrow to experience a new color.
+    </p>
+    <p id="already-responded-message" class="hidden">
+        You have already responded today! Come back tomorrow to experience a new color.
     </p>
   </div>
 
-  <a class="back" href="">Back to Main</a>
+  <div class="bottom">
+    <a href=""><button class="nav-button">BACK</button></a>
+    <a href="responses"><button class="nav-button">OTHER RESPONSES</button></a>
+  </div>
 </div>

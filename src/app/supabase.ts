@@ -14,7 +14,7 @@ export class Supabase {
   // Source - https://stackoverflow.com/a
   // Posted by SudoPlz, modified by community. See post 'Timeline' for change history
   // Retrieved 2025-11-18, License - CC BY-SA 4.0
-  private colorIsDark(bgColor: string) {
+  public colorIsDark(bgColor: string) {
     let color = (bgColor.charAt(0) === '#') ? bgColor.substring(1, 7) : bgColor;
     let r = parseInt(color.substring(0, 2), 16); // hexToR
     let g = parseInt(color.substring(2, 4), 16); // hexToG
@@ -48,5 +48,17 @@ export class Supabase {
     } else {
       return true;
     }
+  }
+
+  async loadRandomResponses(limit: number = 8) {
+    const { data: responses, error } = await this.supabase.from("random_responses")
+      .select("*")
+      .limit(limit);
+      
+    if (error != null) {
+      console.log(error.message);
+      return [];
+    }
+    return responses;
   }
 }

@@ -1,0 +1,56 @@
+.main {
+    position: relative;
+    height: 80dvh;
+    margin: 8dvh 10dvw;
+    overflow: hidden auto;
+}
+.description {
+    margin-bottom: 4dvh;
+}
+
+.responses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4dvw;
+    row-gap: 4dvh;
+    justify-content: center;
+}
+
+.responses div {
+    opacity: 0.98;
+    border: 1px solid;
+
+    padding: 4px 30px 10px;
+    max-width: 320px;
+    min-width: 240px;
+    height: fit-content;
+
+    flex: 2 1 0;
+}
+.responses div:hover {
+    opacity: 1;
+}
+
+.responses div:nth-child(1):hover {
+    transform: rotate(1deg);
+}
+.responses div:nth-child(2):hover {
+    transform: rotate(-1deg);
+}
+
+.responses div h2 {
+    margin-bottom: 6px;
+    padding: 0;
+}
+.responses div h4 {
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    margin: 8dvh 10dvw;
+}
