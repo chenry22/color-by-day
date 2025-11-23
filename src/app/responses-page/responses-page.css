@@ -1,13 +1,22 @@
 .main {
-    position: relative;
-    height: 80dvh;
+    max-height: 100dvh;
+    overflow: hidden;
     margin: 8dvh 10dvw;
-    overflow: hidden auto;
-}
-.description {
-    margin-bottom: 4dvh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    align-items: start;
 }
 
+.description {
+    margin: 0;
+}
+
+.response-container {
+    height: 68dvh;
+    overflow: hidden auto;
+}
 .responses {
     display: flex;
     flex-wrap: wrap;
@@ -17,7 +26,7 @@
 }
 
 .responses div {
-    opacity: 0.98;
+    opacity: 0.96;
     border: 1px solid;
 
     padding: 4px 30px 10px;
@@ -31,10 +40,10 @@
     opacity: 1;
 }
 
-.responses div:nth-child(1):hover {
+.responses div:nth-child(odd):hover {
     transform: rotate(1deg);
 }
-.responses div:nth-child(2):hover {
+.responses div:nth-child(even):hover {
     transform: rotate(-1deg);
 }
 
@@ -46,11 +55,4 @@
     font-style: italic;
     margin: 0;
     padding: 0;
-}
-
-.overlay {
-    position:fixed;
-    bottom: 0;
-    left: 0;
-    margin: 8dvh 10dvw;
 }

@@ -1,19 +1,21 @@
 <div class="main">
     <p class="description">A collection of responses from previous page visitors...</p>
-    <div class="responses">
-        @for (response of responses; track response.id) {
-            <div [id]="response.id" 
-                [style.background-color]="response.color" 
-                [style.color]="sb.colorIsDark(response.color) ? 'white' : 'black'"
-                [style.border-color]="sb.colorIsDark(response.color) ? 'white' : 'black'"
-            >
-                <h2>{{ response.name }} - {{ response.color }}</h2>
-                <h4>{{ response.created_at.split('.')[0] }}</h4>
-                <p>{{ response.response }}</p>
-            </div>
-        } @empty {
-            <div>Loading...</div>
-        }
+    <div class="response-container">
+        <div class="responses">
+            @for (response of responses; track response.id) {
+                <div [id]="response.id" 
+                    [style.background-color]="response.color" 
+                    [style.color]="sb.colorIsDark(response.color) ? 'white' : 'black'"
+                    [style.border-color]="sb.colorIsDark(response.color) ? 'white' : 'black'"
+                >
+                    <h2>{{ response.name }} - {{ response.color }}</h2>
+                    <h4>{{ response.created_at.split('.')[0] }}</h4>
+                    <p>{{ response.response }}</p>
+                </div>
+            } @empty {
+                <div>Loading...</div>
+            }
+        </div>
     </div>
     <div class="bottom overlay">
         <a href=""><button class="nav-button">BACK</button></a>
